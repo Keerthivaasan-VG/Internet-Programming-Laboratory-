@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Examination System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Online Examination System</h2>
+        <form action="ExamServlet" method="post">
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="question-block">
+                <p><strong>1. What is the capital of France?</strong></p>
+                <label><input type="radio" name="q1" value="Paris" required> Paris</label><br>
+                <label><input type="radio" name="q1" value="London"> London</label><br>
+                <label><input type="radio" name="q1" value="Berlin"> Berlin</label>
+            </div>
+
+            <div class="question-block">
+                <p><strong>2. What is 2 + 2?</strong></p>
+                <label><input type="radio" name="q2" value="3" required> 3</label><br>
+                <label><input type="radio" name="q2" value="4"> 4</label><br>
+                <label><input type="radio" name="q2" value="5"> 5</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Exam</button>
+        </form>
+    </div>
+</body>
+</html>
