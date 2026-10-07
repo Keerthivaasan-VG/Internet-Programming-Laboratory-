@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopEasy - Online Shopping System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ShopEasy</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Orders</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Explore Products</h2>
+        <div class="banner">
+            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=900&q=80" alt="Tech Hub Store">
+        </div>
+
+        <h3>Today's Deals</h3>
+        <div class="deals-container">
+            <div class="deal-card" draggable="true">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80" alt="Smartphone">
+                <h4>Smartphone</h4>
+                <p>Latest smartphone with advanced features</p>
+                <p><strong>₹20,000</strong></p>
+            </div>
+            <div class="deal-card" draggable="true">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=300&q=80" alt="Laptop">
+                <h4>Laptop</h4>
+                <p>Powerful laptop for work and entertainment</p>
+                <p><strong>₹50,000</strong></p>
+            </div>
+        </div>
+
+        <h3>Shopping Cart</h3>
+        <div class="cart-box">
+            Drag products here
+        </div>
+
+        <div class="location-section">
+            <h3>Delivery Location</h3>
+            <button class="location-btn" onclick="getLocation()">Get My Location</button>
+            <p id="location-coords"></p>
+        </div>
+
+        <div class="audio-section">
+            <h3>Product Audio</h3>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="video-section">
+            <h3>Product Video</h3>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="canvas-section">
+            <h3>Canvas</h3>
+            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=700&q=80" alt="Canvas Storefront" style="width: 100%; border-radius: 5px;">
+        </div>
+
+        <h2>Complete Your Purchase</h2>
+        <form class="purchase-form">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label>Product</label>
+                <select>
+                    <option>Smartphone</option>
+                    <option>Laptop</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" min="1" value="1">
+            </div>
+            <div class="form-group">
+                <label>Delivery Date</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label>Payment</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="payment"> UPI</label>
+                    <label><input type="radio" name="payment"> Card</label>
+                    <label><input type="radio" name="payment"> Cash</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Place Order</button>
+            <button type="reset" class="btn-clear">Clear</button>
+        </form>
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById("location-coords").innerHTML = 
+                        "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+</body>
+</html>
